@@ -416,13 +416,3 @@ if command -v rfkill >/dev/null 2>&1; then
 else
 	echo "Unable to run $ rfkill unblock wlan"
 fi
-
-# if NoPrompt is not used, ask user some questions
-if [ $NO_PROMPT -ne 1 ]; then
-	printf "Do you want to edit the driver options file now? (recommended) [Y/n] "
-	read -r yn
-	case "$yn" in
-		[nN]) ;;
-		*) ${TEXT_EDITOR} /etc/modprobe.d/${OPTIONS_FILE} ;;
-	esac
-fi
