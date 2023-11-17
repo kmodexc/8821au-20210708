@@ -425,11 +425,4 @@ if [ $NO_PROMPT -ne 1 ]; then
 		[nN]) ;;
 		*) ${TEXT_EDITOR} /etc/modprobe.d/${OPTIONS_FILE} ;;
 	esac
-
-	printf "Do you want to apply the new options by rebooting now? (recommended) [Y/n] "
-	read -r yn
-	case "$yn" in
-		[nN]) ;;
-		*) reboot ;;
-	esac
 fi
